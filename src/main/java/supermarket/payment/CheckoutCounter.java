@@ -11,7 +11,7 @@ public class CheckoutCounter {
         List<SupermarketItem> items = cart.getItems();
         Price totalPrice = new Price(0,0);
         for (SupermarketItem i : items) {
-            totalPrice = totalPrice.add(i.getPrice());
+            totalPrice = totalPrice.add(i.getPriceWithTaxes());
         }
         return new SupermarketBill(items, totalPrice);
     }

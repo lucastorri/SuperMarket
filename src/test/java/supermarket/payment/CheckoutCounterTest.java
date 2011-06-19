@@ -10,6 +10,7 @@ import supermarket.payment.CheckoutCounter;
 import supermarket.payment.CreditCard;
 import supermarket.payment.Price;
 import supermarket.payment.SupermarketBill;
+import supermarket.taxes.Tax;
 
 import static junit.framework.Assert.assertTrue;
 import static org.hamcrest.core.Is.is;
@@ -29,11 +30,11 @@ public class CheckoutCounterTest {
         counter = new CheckoutCounter();
 
         cart = new ShoppingCart();
-        riceItem = new SupermarketItem("Rice", new Price(2,47));
-        beansItem = new SupermarketItem("Beans", new Price(0,99));
+        PlusOneTaxStub tax = new PlusOneTaxStub();
+        riceItem = new SupermarketItem("Rice", new Price(2,47), tax);
+        beansItem = new SupermarketItem("Beans", new Price(0,99), tax);
         cart.add(riceItem).add(riceItem).add(beansItem).add(beansItem);
-        expectedTotalPrice = new Price(6,92);
-
+        expectedTotalPrice = new Price(10,92);
     }
 
     @Test
@@ -46,6 +47,13 @@ public class CheckoutCounterTest {
     public void sumsTheTotalPriceOfTheItemsInACart() {
         SupermarketBill bill = counter.checkout(cart);
         assertThat(bill.getTotalPrice(), is(expectedTotalPrice));
+    }
+
+    private class PlusOneTaxStub implements Tax {
+
+        public Price calculate(Price originalPrice) {
+            return new Price(1,0);
+        }
     }
 
 }
