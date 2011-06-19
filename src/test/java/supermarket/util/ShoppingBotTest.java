@@ -11,6 +11,7 @@ import supermarket.payment.Price;
 import supermarket.payment.SupermarketBill;
 
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
 
 import static junit.framework.Assert.assertTrue;
@@ -54,7 +55,7 @@ public class ShoppingBotTest {
     @Test
     public void doesAllShoppingStepsAutomatically() {
         when(creditCardMock.authorize(any(SupermarketBill.class))).thenReturn(true);
-        when(supermarketMock.getMerchandise()).thenReturn(Arrays.asList(rice, beans, orange, apple));
+        when(supermarketMock.getMerchandise()).thenReturn(new HashSet<SupermarketItem>(Arrays.asList(rice, beans, orange, apple)));
 
         SupermarketBill bill = shoppingBot.shopAll(shoppingList1, shoppingList2);
 

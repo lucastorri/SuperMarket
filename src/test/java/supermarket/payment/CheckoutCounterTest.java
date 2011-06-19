@@ -23,7 +23,6 @@ public class CheckoutCounterTest {
     private ShoppingCart cart;
     private SupermarketItem riceItem;
     private SupermarketItem beansItem;
-    private Price expectedTotalPrice;
 
     @Before
     public void setUp() {
@@ -34,7 +33,6 @@ public class CheckoutCounterTest {
         riceItem = new SupermarketItem("Rice", new Price(2,47), tax);
         beansItem = new SupermarketItem("Beans", new Price(0,99), tax);
         cart.add(riceItem).add(riceItem).add(beansItem).add(beansItem);
-        expectedTotalPrice = new Price(10,92);
     }
 
     @Test
@@ -46,7 +44,7 @@ public class CheckoutCounterTest {
     @Test
     public void sumsTheTotalPriceOfTheItemsInACart() {
         SupermarketBill bill = counter.checkout(cart);
-        assertThat(bill.getTotalPrice(), is(expectedTotalPrice));
+        assertThat(bill.getTotalPrice(), is(new Price(10,92)));
     }
 
     private class PlusOneTaxStub implements Tax {

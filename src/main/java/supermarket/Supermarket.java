@@ -2,8 +2,10 @@ package supermarket;
 
 import supermarket.payment.CheckoutCounter;
 
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Set;
 
 public class Supermarket {
 
@@ -11,9 +13,9 @@ public class Supermarket {
         return new ShoppingCart();
     }
 
-    public List<SupermarketItem> getMerchandise() {
+    public Set<SupermarketItem> getMerchandise() {
         // goes to database
-        return new LinkedList<SupermarketItem>();
+        return new HashSet<SupermarketItem>();
     }
 
     public CheckoutCounter getCheckoutCounter() {

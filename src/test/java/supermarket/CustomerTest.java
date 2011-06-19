@@ -8,6 +8,7 @@ import supermarket.payment.Price;
 import supermarket.payment.SupermarketBill;
 
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
 
 import static org.hamcrest.CoreMatchers.is;
@@ -58,7 +59,7 @@ public class CustomerTest {
         SupermarketItem beans = new SupermarketItem(BEANS_PRODUCT_NAME, new Price(2, 13));
         SupermarketItem orange = new SupermarketItem(ORANGE_PRODUCT_NAME, new Price(0, 39));
         List<SupermarketItem> merchandise = Arrays.asList(rice, beans, orange);
-        when(supermarketMock.getMerchandise()).thenReturn(merchandise);
+        when(supermarketMock.getMerchandise()).thenReturn(new HashSet<SupermarketItem>(merchandise));
 
         customer.shop(shoppingList);
 
