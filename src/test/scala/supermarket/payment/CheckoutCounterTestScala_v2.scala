@@ -7,7 +7,7 @@ import supermarket.payment.{Price, CheckoutCounter}
 import org.specs2.mutable._
 import org.specs2.specification.BeforeExample
 
-class CheckoutCounterTestScala extends Specification with BeforeExample {
+class CheckoutCounterTestScala_v2 extends Specification with BeforeExample {
   sequential
 
   private var counter: CheckoutCounter = _
@@ -21,8 +21,8 @@ class CheckoutCounterTestScala extends Specification with BeforeExample {
     counter = new CheckoutCounter
 
     cart = new ShoppingCart
-    riceItem = new SupermarketItem("Rice", (2,47), PlusOneTaxStub);
-    beansItem = new SupermarketItem("Beans", (0,99), PlusOneTaxStub);
+    riceItem = new SupermarketItem("Rice", (2,47), PlusOneTaxStub)
+    beansItem = new SupermarketItem("Beans", (0,99), PlusOneTaxStub)
     cart.add(riceItem).add(riceItem).add(beansItem).add(beansItem)
   }
 

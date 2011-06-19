@@ -11,7 +11,8 @@ libraryDependencies ++= Seq(
   "org.specs2" %% "specs2" % "1.4-SNAPSHOT" % "test",
   "org.specs2" %% "specs2-scalaz-core" % "6.0.RC2" % "test",
   "org.mockito" % "mockito-all" % "1.8.5" % "test",
-  "junit" % "junit" % "4.8.2" % "test"
+  "junit" % "junit" % "4.8.2" % "test",
+  "com.novocode" % "junit-interface" % "0.6" % "test"
 )
 
 testFrameworks += new TestFramework("org.specs2.runner.SpecsFramework")
