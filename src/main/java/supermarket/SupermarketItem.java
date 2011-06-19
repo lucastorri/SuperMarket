@@ -3,8 +3,6 @@ package supermarket;
 import supermarket.payment.Price;
 import supermarket.taxes.Tax;
 
-import java.util.Arrays;
-
 public class SupermarketItem {
 
     private final String name;

@@ -1,7 +1,6 @@
 package supermarket.payment;
 
 import org.junit.Test;
-import supermarket.payment.Price;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;

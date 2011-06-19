@@ -2,20 +2,12 @@ package supermarket.payment;
 
 import org.junit.Before;
 import org.junit.Test;
-import supermarket.Customer;
 import supermarket.ShoppingCart;
-import supermarket.Supermarket;
 import supermarket.SupermarketItem;
-import supermarket.payment.CheckoutCounter;
-import supermarket.payment.CreditCard;
-import supermarket.payment.Price;
-import supermarket.payment.SupermarketBill;
 import supermarket.taxes.Tax;
 
-import static junit.framework.Assert.assertTrue;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
-import static org.mockito.Mockito.*;
 
 public class CheckoutCounterTest {
 

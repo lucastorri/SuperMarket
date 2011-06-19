@@ -3,16 +3,13 @@ package supermarket.payment;
 import org.junit.Before;
 import org.junit.Test;
 import supermarket.SupermarketItem;
-import supermarket.payment.CreditCard;
-import supermarket.payment.Price;
-import supermarket.payment.SupermarketBill;
 
 import java.util.Arrays;
 
 import static junit.framework.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.when;
 
 public class SupermarketBillTest {
 
