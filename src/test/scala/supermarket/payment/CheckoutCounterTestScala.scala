@@ -37,6 +37,6 @@ class CheckoutCounterTestScala extends Specification with BeforeExample {
   }
 
   object PlusOneTaxStub extends Tax {
-    def calculate(p: Price) = new Price(1,0)
+    def calculate(p: Price) = (1,0)
   }
 }
