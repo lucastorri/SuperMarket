@@ -6,9 +6,7 @@ import supermarket.payment.{Price, CheckoutCounter}
 
 import org.specs2.mutable._
 
-class CheckoutCounterTestScala_v3 extends Specification {
-
-  implicit def intTuple2Price(t: (Int, Int)) = new Price(t._1, t._2)
+class CheckoutCounterTestScala_v3 extends Specification with PriceConverter {
 
   private val riceItem = new SupermarketItem("Rice", (2,47), PlusOneTaxStub)
   private val beansItem = new SupermarketItem("Beans", (0,99), PlusOneTaxStub)

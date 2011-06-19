@@ -22,3 +22,5 @@ resolvers ++= Seq(
   "releases" at "http://scala-tools.org/repo-releases",
   "maven" at "http://repo1.maven.org/maven2"
 )
+
+logLevel in compile := Level.Error
