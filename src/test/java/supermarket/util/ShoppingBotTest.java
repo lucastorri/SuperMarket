@@ -15,9 +15,9 @@ import java.util.HashSet;
 import java.util.List;
 
 import static junit.framework.Assert.assertTrue;
+import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 import static org.mockito.Mockito.*;
-import static org.hamcrest.core.Is.is;
 import static supermarket.util.ItemCounter.countItem;
 
 public class ShoppingBotTest {

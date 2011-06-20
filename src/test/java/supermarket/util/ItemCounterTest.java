@@ -3,11 +3,11 @@ package supermarket.util;
 import org.junit.Test;
 import supermarket.SupermarketItem;
 import supermarket.payment.Price;
-import static org.hamcrest.core.Is.is;
 
 import java.util.Arrays;
 import java.util.List;
 
+import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 import static supermarket.util.ItemCounter.countItem;
 

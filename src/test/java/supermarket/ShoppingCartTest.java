@@ -2,17 +2,12 @@ package supermarket;
 
 import org.junit.Before;
 import org.junit.Test;
-import supermarket.ShoppingCart;
-import supermarket.SupermarketItem;
 import supermarket.payment.Price;
 
 import java.util.List;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertThat;
-import static org.junit.Assert.assertTrue;
 import static org.hamcrest.CoreMatchers.is;
-import static org.junit.matchers.JUnitMatchers.hasItems;
+import static org.junit.Assert.*;
 import static supermarket.util.ItemCounter.countItem;
 
 public class ShoppingCartTest {
