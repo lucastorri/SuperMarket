@@ -5,32 +5,32 @@ import scala.collection.JavaConversions._
 import scalaj.collection.Imports._
 
 import org.specs2.mutable._
+import org.specs2.mock.Mockito
 import org.specs2.specification.Scope
-import org.mockito.Matchers.same
-import org.mockito.Mockito._
 import supermarket.payment.PriceConverter
 
 
-object CustomerTestScala_v3 {
+object CustomerTestScala_v4 {
   private final val RICE_PRODUCT_NAME = "Rice"
   private final val BEANS_PRODUCT_NAME = "Beans"
   private final val ORANGE_PRODUCT_NAME = "Orange"
 }
 
-class CustomerTestScala_v3 extends Specification with PriceConverter {
-  import CustomerTestScala_v3._
+class CustomerTestScala_v4 extends Specification with Mockito with PriceConverter {
+  import CustomerTestScala_v4._
 
   "gets a new shopping cart from the supermarket" in {
-    val supermarketMock = mock(classOf[Supermarket])
+    val supermarketMock = mock[Supermarket]
     val returnedShoppingCart = new ShoppingCart
-    when(supermarketMock.getShoppingCart).thenReturn(returnedShoppingCart)
+    supermarketMock.getShoppingCart returns returnedShoppingCart
 
     val customer = new Customer(supermarketMock, creditCard)
     customer.getCart must be (returnedShoppingCart)
   }
 
   "shops following a shopping list" in new merchandiseContext {
-    when(supermarketMock.getMerchandise).thenReturn(merchandise)
+    supermarketMock.getMerchandise returns merchandise
+
     customer.shop(shoppingList)
 
     val items = customer.getCart.getItems
@@ -38,25 +38,24 @@ class CustomerTestScala_v3 extends Specification with PriceConverter {
   }
 
   "gets a counter to checkout and pay" in new normalContext {
-    val checkoutCounter = mock(classOf[CheckoutCounter])
-    when(supermarketMock.getCheckoutCounter).thenReturn(checkoutCounter)
+    val checkoutCounter = mock[CheckoutCounter]
+    supermarketMock.getCheckoutCounter returns checkoutCounter
 
     val bill = customer.checkout
-    verify(checkoutCounter).checkout(customer.getCart)
+    there was one(checkoutCounter).checkout(customer.getCart)
   }
 
   "pays bills with credit card" in new normalContext {
     customer.pay(billMock)
-    verify(billMock).payWithCreditCard(same(creditCard))
+    there was one(billMock).payWithCreditCard(creditCard)
   }
 
   val creditCard = new CreditCard
 
   trait normalContext extends Scope {
-    val supermarketMock = mock(classOf[Supermarket])
-    when(supermarketMock.getShoppingCart).thenCallRealMethod
+    val supermarketMock = spy(new Supermarket)
     val customer = new Customer(supermarketMock, creditCard)
-    val billMock = mock(classOf[SupermarketBill])
+    val billMock = mock[SupermarketBill]
     val shoppingList = new ShoppingList().jotDown(2, RICE_PRODUCT_NAME).jotDown(1, ORANGE_PRODUCT_NAME)
   }
 
