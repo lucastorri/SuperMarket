@@ -22,6 +22,7 @@ object CustomerTestScala_v1 {
 }
 
 class CustomerTestScala_v1 {
+  import CustomerTestScala_v1._
 
   private var customer: Customer = null
   private var creditCard: CreditCard = null

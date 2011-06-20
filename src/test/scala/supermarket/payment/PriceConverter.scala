@@ -15,3 +15,5 @@ trait PriceConverter {
   }
 
 }
+
+object PriceConverter extends PriceConverter
