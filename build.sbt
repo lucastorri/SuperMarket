@@ -13,7 +13,9 @@ libraryDependencies ++= Seq(
   "org.mockito" % "mockito-all" % "1.8.5" % "test",
   "junit" % "junit" % "4.8.2" % "test",
   "com.novocode" % "junit-interface" % "0.7" % "test",
-  "org.scalaj" %% "scalaj-collection" % "1.1" % "test"
+  "org.scalaj" %% "scalaj-collection" % "1.1" % "test",
+  "org.scala-tools.testing" %% "scalacheck" % "1.9" % "test",
+  "org.scalatest" % "scalatest_2.9.0" % "1.6.1" % "test"
 )
 
 testFrameworks += new TestFramework("org.specs2.runner.SpecsFramework")

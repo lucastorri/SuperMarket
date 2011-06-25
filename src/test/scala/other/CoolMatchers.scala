@@ -5,8 +5,6 @@ import org.specs2.mock.Mockito
 
 class CoolMatchers extends Specification with Tags {
 
-  "Cool matches".title
-
   "more mocking" in {
     success
   }
