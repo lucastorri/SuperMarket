@@ -1,6 +1,7 @@
 *.iml
 target
-project/*
+project/boot
+project/target
 .idea
 .classpath
 .metadata/
