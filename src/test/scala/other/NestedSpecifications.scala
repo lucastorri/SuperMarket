@@ -1,8 +1,10 @@
 package other
 
 import org.specs2.mutable._
+import org.junit.runner.RunWith
 
-object NestedSpecifications extends Specification {
+@RunWith(classOf[org.specs2.runner.JUnitRunner])
+class NestedSpecifications extends Specification {
   
   "A shopping cart".title
   
