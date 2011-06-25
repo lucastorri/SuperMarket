@@ -2,3 +2,6 @@
 target
 project/*
 .idea
+.classpath
+.metadata/
+.project
