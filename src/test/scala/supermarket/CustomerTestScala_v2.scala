@@ -1,9 +1,7 @@
 package supermarket
 
-import supermarket.payment.{CheckoutCounter, CreditCard, Price, SupermarketBill}
-import java.util.{Arrays, HashSet, List}
-import org.hamcrest.CoreMatchers.is
-import org.junit.Assert.assertThat
+import supermarket.payment.{CheckoutCounter, CreditCard, SupermarketBill}
+import java.util.{Arrays, HashSet}
 import org.mockito.Matchers.same
 import org.mockito.Mockito._
 import supermarket.util.ItemCounter.countItem

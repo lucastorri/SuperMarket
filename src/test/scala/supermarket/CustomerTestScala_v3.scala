@@ -1,7 +1,6 @@
 package supermarket
 
-import supermarket.payment.{CheckoutCounter, CreditCard, Price, SupermarketBill}
-import scala.collection.JavaConversions._
+import supermarket.payment.{CheckoutCounter, CreditCard, SupermarketBill}
 import scalaj.collection.Imports._
 
 import org.specs2.mutable._

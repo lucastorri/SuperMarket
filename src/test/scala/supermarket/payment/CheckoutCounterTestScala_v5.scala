@@ -2,8 +2,6 @@ package supermarket.payment
 
 import supermarket.{SupermarketItem, ShoppingCart}
 import supermarket.taxes.Tax
-import supermarket.payment.{Price, CheckoutCounter}
-
 import org.specs2.mutable._
 
 class CheckoutCounterTestScala_v5 extends Specification with PriceConverter {
