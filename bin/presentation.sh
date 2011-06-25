@@ -1,3 +1,5 @@
+#!/bin/bash
+
 EDITOR=mate
 
 function editFiles {
