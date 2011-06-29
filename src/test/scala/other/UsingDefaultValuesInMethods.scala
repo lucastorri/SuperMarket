@@ -14,9 +14,9 @@ class UsingDefaultValuesInMethods extends Specification with Mockito {
 
   def createSubjectUnderTest(
     something: AnyRef = AnyRefStub,
-    somethingElse: AnyRef = new AnyRef,
-    anotherOne: AnyRef = new AnyRef,
-    lastOne: AnyRef = new AnyRef
+    somethingElse: AnyRef = AnyRefStub,
+    anotherOne: AnyRef = AnyRefStub,
+    lastOne: AnyRef = AnyRefStub
   ) = new SubjectUnderTest(something, somethingElse, anotherOne, lastOne)
 
   "first test, that needs something" in {
