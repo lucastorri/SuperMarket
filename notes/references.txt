@@ -1,0 +1,12 @@
+http://repo.novus.com/specs2-presentation/
+http://etorreborre.github.com/specs2/
+http://www.scalatest.org/
+http://code.google.com/p/scalacheck/
+
+http://confluence.jetbrains.net/display/SCA/Scala+Plugin+for+IntelliJ+IDEA
+http://confluence.jetbrains.net/display/SCA/Scala+Plugin+0.2+features
+https://github.com/mpeltonen/sbt-idea
+https://github.com/orfjackal/idea-sbt-plugin
+
+https://github.com/typesafehub/sbteclipse
+http://www.scala-ide.org/
