@@ -29,7 +29,7 @@ class CustomerTestScala_v3 extends Specification with PriceConverter {
   }
 
   "shops following a shopping list" in new merchandiseContext {
-    when(supermarketMock.getMerchandise).thenReturn(merchandise)
+    when(supermarketMock.getMerchandise).thenReturn(merchandise.asJava)
     customer.shop(shoppingList)
 
     val items = customer.getCart.getItems
