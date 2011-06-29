@@ -1,7 +1,27 @@
+package other
 
-class XMLIntegrationTest {
+import org.specs2.mutable._
 
-  val f = <a z="3"/>
-  val xml = <xml>{f}</xml>
+class XMLIntegrationTest extends Specification {
+
+  "xml is a first class citizen" in {
+    val magicValue = "71"
+
+    val xml =
+      <some>
+        <with>
+          <something v={magicValue} />
+        </with>
+      </some>.toString
+
+
+    ImAXMLHogUnderTest.devourXML(xml) must be ("delicious!")
+  }
+
+}
+
+object ImAXMLHogUnderTest {
+
+  def devourXML(xml: String) = "delicious!"
 
 }
