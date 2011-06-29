@@ -9,6 +9,10 @@ class CoolMatchers extends Specification with Tags with DataTables {
   "more mocking" in {
     success
   }
+  
+  "file matchers" in {
+    "/etc/passwd" must beAnExistingPath
+  }
 
   "data tables" in {
     "a" | "b" | "r" |
@@ -25,6 +29,9 @@ class CoolMatchers extends Specification with Tags with DataTables {
   // "I want to fail :(" in {
   //   failure
   // }
+
+  // there is a big list, better check them all here:
+  // http://etorreborre.github.com/specs2/guide/org.specs2.guide.Matchers.html#Matchers+guide
 
 }
 

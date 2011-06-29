@@ -18,6 +18,8 @@ class XMLIntegrationTest extends Specification {
     ImAXMLHogUnderTest.devourXML(xml) must be ("delicious!")
   }
 
+  // by the way... there are JSON and XML matchers in specs2
+
 }
 
 object ImAXMLHogUnderTest {
