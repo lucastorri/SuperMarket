@@ -5,7 +5,7 @@ EDITOR=mate
 function editFiles {
   $EDITOR `find $1 -iname $2 | tr '\\n' ' '`
 }
-BASEPATH=`dirname $0`
+BASEPATH=`dirname $0`/../
 
 
 $EDITOR $BASEPATH/src/main/java/supermarket
