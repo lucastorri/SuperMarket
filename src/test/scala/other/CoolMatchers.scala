@@ -6,10 +6,6 @@ import org.specs2.matcher.DataTables
 
 class CoolMatchers extends Specification with Tags with DataTables {
 
-  "more mocking" in {
-    success
-  }
-  
   "file matchers" in {
     "/etc/passwd" must beAnExistingPath
   }
